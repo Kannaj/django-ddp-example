@@ -1,0 +1,17 @@
+from dddp.api import API,DDP, Collection, Publication
+from .models import Task1
+
+
+class Task(Collection):
+    model = Task1
+
+
+class Tasks(Publication):
+    queries = [
+        Task1.objects.all(),
+    ]
+
+API.register([
+    Task1,
+    Tasks,
+])
